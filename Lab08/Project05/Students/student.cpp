@@ -1,4 +1,4 @@
-// реализация всех методов класса Student
+п»ї// СЂРµР°Р»РёР·Р°С†РёСЏ РІСЃРµС… РјРµС‚РѕРґРѕРІ РєР»Р°СЃСЃР° Student
 
 /* student.cpp */
 #include <string> 
@@ -6,12 +6,12 @@
 
 #include "student.h" 
 
-// Деструктор Student 
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ Student 
 Student::~Student()
 {
 	Student::save();
 }
-// Запись данных о студенте в файл 
+// Р—Р°РїРёСЃСЊ РґР°РЅРЅС‹С… Рѕ СЃС‚СѓРґРµРЅС‚Рµ РІ С„Р°Р№Р» 
 void Student::save()
 {
 	ofstream fout("students.txt", ios::app);
@@ -24,45 +24,45 @@ void Student::save()
 	fout.close();
 }
 
-// Конструктор Student 
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Student 
 Student::Student(string name, string last_name)
 {
 	Student::set_name(name);
 	Student::set_last_name(last_name);
 }
 
-// Установка имени студента 
+// РЈСЃС‚Р°РЅРѕРІРєР° РёРјРµРЅРё СЃС‚СѓРґРµРЅС‚Р° 
 void Student::set_name(std::string student_name)
 {
 	Student::name = student_name;
 }
-// Получение имени студента 
+// РџРѕР»СѓС‡РµРЅРёРµ РёРјРµРЅРё СЃС‚СѓРґРµРЅС‚Р° 
 std::string Student::get_name()
 {
 	return Student::name;
 }
-// Установка фамилии студента 
+// РЈСЃС‚Р°РЅРѕРІРєР° С„Р°РјРёР»РёРё СЃС‚СѓРґРµРЅС‚Р° 
 void Student::set_last_name(std::string student_last_name) {
 	Student::last_name = student_last_name;
 }
-// Получение фамилии студента 
+// РџРѕР»СѓС‡РµРЅРёРµ С„Р°РјРёР»РёРё СЃС‚СѓРґРµРЅС‚Р° 
 std::string Student::get_last_name()
 {
 	return Student::last_name;
 }
-// Установка промежуточных оценок 
+// РЈСЃС‚Р°РЅРѕРІРєР° РїСЂРѕРјРµР¶СѓС‚РѕС‡РЅС‹С… РѕС†РµРЅРѕРє 
 void Student::set_scores(int scores[])
 {
 	for (int i = 0; i < 5; ++i) {
 		Student::scores[i] = scores[i];
 	}
 }
-// Установка среднего балла 
+// РЈСЃС‚Р°РЅРѕРІРєР° СЃСЂРµРґРЅРµРіРѕ Р±Р°Р»Р»Р° 
 void Student::set_average_score(double ball)
 {
 	Student::average_score = ball;
 }
-// Получение среднего балла 
+// РџРѕР»СѓС‡РµРЅРёРµ СЃСЂРµРґРЅРµРіРѕ Р±Р°Р»Р»Р° 
 double Student::get_average_score()
 {
 	return Student::average_score;

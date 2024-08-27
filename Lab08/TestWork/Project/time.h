@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 
 using namespace std;
 
@@ -9,7 +9,7 @@ private:
     int seconds;
 
 public:
-    // Конструктор по умолчанию
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
     Time() : hours(0), minutes(0), seconds(0) {}
 
     Time(int, int, int);

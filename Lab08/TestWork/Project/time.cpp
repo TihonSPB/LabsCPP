@@ -1,23 +1,23 @@
-#include <iomanip>
+п»ї#include <iomanip>
 #include <iostream>
 #include "time.h"
 
-// Конструктор с параметрами
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 Time::Time(int h, int m, int s) {
     hours = h + m / 60 + s / 3600;
     minutes = m % 60 + (s % 3600) / 60;
     seconds = s % 60;
-    hours %= 24; // Ограничиваем часы в пределах 24 часов
+    hours %= 24; // РћРіСЂР°РЅРёС‡РёРІР°РµРј С‡Р°СЃС‹ РІ РїСЂРµРґРµР»Р°С… 24 С‡Р°СЃРѕРІ
 }
 
-// Метод для вывода времени
+// РњРµС‚РѕРґ РґР»СЏ РІС‹РІРѕРґР° РІСЂРµРјРµРЅРё
 void Time::displayTime() const {
     cout << setw(2) << setfill('0') << hours << ":"
         << setw(2) << setfill('0') << minutes << ":"
         << setw(2) << setfill('0') << seconds << endl;
 }
 
-// Метод для сложения двух объектов Time
+// РњРµС‚РѕРґ РґР»СЏ СЃР»РѕР¶РµРЅРёСЏ РґРІСѓС… РѕР±СЉРµРєС‚РѕРІ Time
 Time Time::add(const Time& other) const {
     int totalSeconds = seconds + other.seconds;
     int totalMinutes = minutes + other.minutes + totalSeconds / 60;
