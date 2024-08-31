@@ -1,4 +1,4 @@
-#ifndef PERSONCOLLECTION_H
+﻿#ifndef PERSONCOLLECTION_H
 #define PERSONCOLLECTION_H
 
 #include <vector>

@@ -1,23 +1,23 @@
-#include "PersonCollection.h"
+ï»¿#include "PersonCollection.h"
 
 void PersonCollection::saveToFile(const std::string& filename) const {
     std::ofstream file(filename);
     if (!file) {
-        std::cout << "Íå óäàëîñü îòêðûòü ôàéë äëÿ çàïèñè." << std::endl;
+        std::cout << "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» Ð´Ð»Ñ Ð·Ð°Ð¿Ð¸ÑÐ¸." << std::endl;
     }
     else {
         for (const auto& person : people) {
             file << person->getName() << "," << person->getPhone() << "," << person->getOccupation() << std::endl;
         }
         file.close();
-        std::cout << "Ôàéë óñïåøíî çàïèñàí." << std::endl;
+        std::cout << "Ð¤Ð°Ð¹Ð» ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð·Ð°Ð¿Ð¸ÑÐ°Ð½." << std::endl;
     }
 }
 
 void PersonCollection::loadFromFile(const std::string& filename) {
     std::ifstream file(filename);
     if (!file) {
-        std::cout << "Íå óäàëîñü îòêðûòü ôàéë äëÿ ÷òåíèÿ." << std::endl;
+        std::cout << "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» Ð´Ð»Ñ Ñ‡Ñ‚ÐµÐ½Ð¸Ñ." << std::endl;
         return;
     }
     std::string name, phone, occupation;
@@ -25,11 +25,11 @@ void PersonCollection::loadFromFile(const std::string& filename) {
     while (std::getline(file, name, ',')) {
         std::getline(file, phone, ',');
         std::getline(file, occupation);
-        if (occupation == "Ñòóäåíò") {
+        if (occupation == "Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚") {
             addPerson(new Student(name, phone));
             count++;
         }
-        else if (occupation == "Ïðåïîäàâàòåëü") {
+        else if (occupation == "ÐŸÑ€ÐµÐ¿Ð¾Ð´Ð°Ð²Ð°Ñ‚ÐµÐ»ÑŒ") {
             addPerson(new Teacher(name, phone));
             count++;
         }
@@ -37,16 +37,16 @@ void PersonCollection::loadFromFile(const std::string& filename) {
     file.close();
 
     if (count > 0) {
-        std::cout << "Óñïåøíî çàãðóæåíî " << count << " çàïèñåé èç ôàéëà." << std::endl;
+        std::cout << "Ð£ÑÐ¿ÐµÑˆÐ½Ð¾ Ð·Ð°Ð³Ñ€ÑƒÐ¶ÐµÐ½Ð¾ " << count << " Ð·Ð°Ð¿Ð¸ÑÐµÐ¹ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°." << std::endl;
     }
     else {
-        std::cout << "Ôàéë ïóñò èëè íå ñîäåðæèò êîððåêòíûõ äàííûõ." << std::endl;
+        std::cout << "Ð¤Ð°Ð¹Ð» Ð¿ÑƒÑÑ‚ Ð¸Ð»Ð¸ Ð½Ðµ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ñ… Ð´Ð°Ð½Ð½Ñ‹Ñ…." << std::endl;
     }
 }
 
 void PersonCollection::displayAll() const {
     if (people.empty()) {
-        std::cout << "Íåò çàïèñåé äëÿ îòîáðàæåíèÿ." << std::endl;
+        std::cout << "ÐÐµÑ‚ Ð·Ð°Ð¿Ð¸ÑÐµÐ¹ Ð´Ð»Ñ Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ." << std::endl;
     }
     else {
         for (const auto& person : people) {

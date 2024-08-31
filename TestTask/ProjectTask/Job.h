@@ -1,4 +1,4 @@
-#ifndef JOB_H
+п»ї#ifndef JOB_H
 #define JOB_H
 
 #include <string>
@@ -11,12 +11,12 @@ public:
 
 class StudentJob : public Job {
 public:
-    std::string getOccupation() const override { return "Студент"; }
+    std::string getOccupation() const override { return "РЎС‚СѓРґРµРЅС‚"; }
 };
 
 class TeacherJob : public Job {
 public:
-    std::string getOccupation() const override { return "Преподаватель"; }
+    std::string getOccupation() const override { return "РџСЂРµРїРѕРґР°РІР°С‚РµР»СЊ"; }
 };
 
 #endif // JOB_H

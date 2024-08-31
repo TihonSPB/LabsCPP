@@ -1,4 +1,4 @@
-#ifndef PERSON_H
+п»ї#ifndef PERSON_H
 #define PERSON_H
 
 #include <string>
@@ -21,9 +21,9 @@ public:
     Student(const std::string& n, const std::string& p) : name(n), phone(p) {}
     std::string getName() const override { return name; }
     std::string getPhone() const override { return phone; }
-    std::string getOccupation() const override { return "Студент"; }
+    std::string getOccupation() const override { return "РЎС‚СѓРґРµРЅС‚"; }
     void displayInfo() const override {
-        std::cout << "Имя: " << name << ", Телефон: " << phone << ", Род занятий: Студент" << std::endl;
+        std::cout << "РРјСЏ: " << name << ", РўРµР»РµС„РѕРЅ: " << phone << ", Р РѕРґ Р·Р°РЅСЏС‚РёР№: РЎС‚СѓРґРµРЅС‚" << std::endl;
     }
 };
 
@@ -35,9 +35,9 @@ public:
     Teacher(const std::string& n, const std::string& p) : name(n), phone(p) {}
     std::string getName() const override { return name; }
     std::string getPhone() const override { return phone; }
-    std::string getOccupation() const override { return "Преподаватель"; }
+    std::string getOccupation() const override { return "РџСЂРµРїРѕРґР°РІР°С‚РµР»СЊ"; }
     void displayInfo() const override {
-        std::cout << "Имя: " << name << ", Телефон: " << phone << ", Род занятий: Преподаватель" << std::endl;
+        std::cout << "РРјСЏ: " << name << ", РўРµР»РµС„РѕРЅ: " << phone << ", Р РѕРґ Р·Р°РЅСЏС‚РёР№: РџСЂРµРїРѕРґР°РІР°С‚РµР»СЊ" << std::endl;
     }
 };
 

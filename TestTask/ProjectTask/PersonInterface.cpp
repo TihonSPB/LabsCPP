@@ -1,4 +1,4 @@
-#include "PersonInterface.h"
+п»ї#include "PersonInterface.h"
 
 void PersonInterface::run() {
     int choice;
@@ -8,7 +8,7 @@ void PersonInterface::run() {
         if (std::cin.fail()) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "\nНеверный ввод. Пожалуйста, введите число.\n" << std::endl;
+            std::cout << "\nРќРµРІРµСЂРЅС‹Р№ РІРІРѕРґ. РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ С‡РёСЃР»Рѕ.\n" << std::endl;
             continue;
         }
         std::cout << "\n";
@@ -18,30 +18,30 @@ void PersonInterface::run() {
 }
 
 void PersonInterface::displayMenu() {
-    std::cout << "1. Добавить человека" << std::endl;
-    std::cout << "2. Сохранить в файл" << std::endl;
-    std::cout << "3. Загрузить из файла" << std::endl;
-    std::cout << "4. Показать всех людей" << std::endl;
-    std::cout << "5. Выход" << std::endl;
+    std::cout << "1. Р”РѕР±Р°РІРёС‚СЊ С‡РµР»РѕРІРµРєР°" << std::endl;
+    std::cout << "2. РЎРѕС…СЂР°РЅРёС‚СЊ РІ С„Р°Р№Р»" << std::endl;
+    std::cout << "3. Р—Р°РіСЂСѓР·РёС‚СЊ РёР· С„Р°Р№Р»Р°" << std::endl;
+    std::cout << "4. РџРѕРєР°Р·Р°С‚СЊ РІСЃРµС… Р»СЋРґРµР№" << std::endl;
+    std::cout << "5. Р’С‹С…РѕРґ" << std::endl;
 }
 
 void PersonInterface::handleUserInput(int choice) {
     std::string name, phone, occupation;
     switch (choice) {
     case 1:
-        std::cout << "Введите имя: ";
+        std::cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ: ";
         std::cin >> name;
-        std::cout << "Введите телефон: ";
+        std::cout << "Р’РІРµРґРёС‚Рµ С‚РµР»РµС„РѕРЅ: ";
         std::cin >> phone;
-        std::cout << "Введите род занятий (Студент/Преподаватель): ";
+        std::cout << "Р’РІРµРґРёС‚Рµ СЂРѕРґ Р·Р°РЅСЏС‚РёР№ (РЎС‚СѓРґРµРЅС‚/РџСЂРµРїРѕРґР°РІР°С‚РµР»СЊ): ";
         std::cin >> occupation;
-        if (occupation == "Студент" || occupation == "Преподаватель") {
-            Person* newPerson = (occupation == "Студент") ? static_cast<Person*>(new Student(name, phone)) : static_cast<Person*>(new Teacher(name, phone));
+        if (occupation == "РЎС‚СѓРґРµРЅС‚" || occupation == "РџСЂРµРїРѕРґР°РІР°С‚РµР»СЊ") {
+            Person* newPerson = (occupation == "РЎС‚СѓРґРµРЅС‚") ? static_cast<Person*>(new Student(name, phone)) : static_cast<Person*>(new Teacher(name, phone));
             PersonCollection::getInstance().addPerson(newPerson);
-            std::cout << "Человек успешно добавлен." << std::endl;
+            std::cout << "Р§РµР»РѕРІРµРє СѓСЃРїРµС€РЅРѕ РґРѕР±Р°РІР»РµРЅ." << std::endl;
         }
         else {
-            std::cout << "Неверный род занятий. Попробуйте снова." << std::endl;
+            std::cout << "РќРµРІРµСЂРЅС‹Р№ СЂРѕРґ Р·Р°РЅСЏС‚РёР№. РџРѕРїСЂРѕР±СѓР№С‚Рµ СЃРЅРѕРІР°." << std::endl;
         }
         break;
     case 2:
@@ -56,6 +56,6 @@ void PersonInterface::handleUserInput(int choice) {
     case 5:
         exit(0);
     default:
-        std::cout << "Неверный выбор" << std::endl;
+        std::cout << "РќРµРІРµСЂРЅС‹Р№ РІС‹Р±РѕСЂ" << std::endl;
     }
 }

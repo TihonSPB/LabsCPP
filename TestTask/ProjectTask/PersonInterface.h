@@ -1,4 +1,4 @@
-#ifndef PERSONINTERFACE_H
+﻿#ifndef PERSONINTERFACE_H
 #define PERSONINTERFACE_H
 
 #include <iostream>
